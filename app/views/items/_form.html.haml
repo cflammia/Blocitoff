@@ -1,0 +1,6 @@
+%h4 Add a to-do list item:
+= form_for [@list.items.new] do |f|
+  .form-group
+    = f.text_area :name, rows: 1, class: 'form-control', placeholder: "Enter a to-do item"
+  .form-group
+    = f.submit "Save", class: 'btn btn-success'

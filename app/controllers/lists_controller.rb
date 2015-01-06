@@ -8,6 +8,7 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @title = @list.title
+    @items = @list.items
   end
 
   def new
