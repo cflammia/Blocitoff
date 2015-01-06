@@ -42,11 +42,13 @@ class ListsController < ApplicationController
   def destroy
     @list = current_user.lists.find(params[:id])
     title = @list.title
-    if @list.destroy 
-      redirect_to lists_path, notice: "\"#{title}\" was deleted successfully."
+
+    if @list.destroy
+      flash[:notice] = "\"#{title}\" was deleted successfully."
+      redirect_to lists_path
     else
-      flash[:error] = "There was an error deleting your list. Please try again."
-      redirect to :back 
+      flash[:error] = "There was an error deleting the list."
+      render :show
     end
   end
 
