@@ -12,6 +12,10 @@ group :development do
   gem 'sqlite3'
 end
 
+group :test do
+  'pry-rails'
+end
+
 gem 'haml'
 gem 'bootstrap-sass', '~>3.1.1'
 gem 'devise'

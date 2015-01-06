@@ -26,14 +26,31 @@ class ListsController < ApplicationController
   end
 
   def edit
+    @list = List.find(params[:id])
   end
 
   def update
+    @list = List.find(params[:id])
+    if @list.update_attributes(list_params)
+      redirect_to lists_path, notice: 'Your list was updated.'
+    else
+      flash[:error] = "There was an error updating the list. Please try again."
+      render :edit
+    end
   end
 
   def destroy
+    @list = current_user.lists.find(params[:id])
+    title = @list.title
+    if @list.destroy 
+      redirect_to lists_path, notice: "\"#{title}\" was deleted successfully."
+    else
+      flash[:error] = "There was an error deleting your list. Please try again."
+      redirect to :back 
+    end
   end
 
   def list_params
+    params.require(:list).permit(:title)
   end
 end
