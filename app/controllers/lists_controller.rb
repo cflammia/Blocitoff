@@ -9,7 +9,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @title = @list.title
     @items = @list.items
-    @item = Item.new
+    @item = current_user.items.build
   end
 
   def new

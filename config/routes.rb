@@ -1,8 +1,8 @@
 Blocitoff2::Application.routes.draw do
-  get "items/create"
   devise_for :users
-  resources :lists
+  resources :lists do
     resources :items, only: [:create]
+  end
 
   get 'about' => 'welcome#about'
   root to: 'welcome#index'
