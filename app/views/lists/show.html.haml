@@ -4,7 +4,7 @@
     = render partial: 'items/item', locals: {items: @items}
 .row
   .col-md-4
-    = render 'items/form', locals: {list: @list}
+    = render 'items/form', locals: {item: @item}
 
 = link_to "Edit", edit_list_path(@list), class: 'btn btn-success'
 

@@ -12,8 +12,8 @@ group :development do
   gem 'sqlite3'
 end
 
-group :test do
-  'pry-rails'
+group :development, :test do
+  gem 'pry'
 end
 
 gem 'haml'
