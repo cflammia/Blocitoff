@@ -2,5 +2,4 @@
 = form_for [@list, @item] do |f|
   .form-group
     = f.text_area :name, rows: 1, class: 'form-control', placeholder: "Enter a to-do item"
-    = f.hidden_field :list_id, value: @list.id
     = f.submit "Save", class: 'btn btn-success'

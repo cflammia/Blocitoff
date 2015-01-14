@@ -1,7 +1,7 @@
 %h1= @title
 .row
   .col-md-4
-    = render 'items/item', locals: {items: @items}
+    = render 'items/item', locals: {list: @list, items: @items, item: @item}
 .row
   .col-md-4
     = render 'items/form', locals: {list: @list, item: @item}
