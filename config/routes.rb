@@ -1,7 +1,7 @@
 Blocitoff2::Application.routes.draw do
   devise_for :users
   resources :lists do
-    resources :items, only: [:create]
+    resources :items, only: [:create, :destroy]
   end
 
   get 'about' => 'welcome#about'
