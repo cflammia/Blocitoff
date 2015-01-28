@@ -15,16 +15,16 @@ class ItemsController < ApplicationController
   def destroy
     @list = current_user.lists.find(params[:list_id])
     @item = @list.items.find(params[:id])
-    title = @item.title
+    @title = @list.title
 
     if @item.destroy
-      flash[:notice] = "\"#{item}\" was deleted successfully."
+      flash[:notice] = "\"#{@item.name}\" was deleted successfully."
     else
       flash[:error] = "There was an error deleting the list."
     end
 
     respond_with(@item) do |format|
-      format.html {redirect_to list_items_path}
+      format.html {redirect_to [@list.item, @list]}
     end
   end
 
