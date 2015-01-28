@@ -1,0 +1,9 @@
+%h1 Edit List
+.row
+  .col-md-4
+    = form_for @list do |f|
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control', placeholder: "Enter post title"
+      .form-group
+        = f.submit "Save", class: 'btn btn-success'

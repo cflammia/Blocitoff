@@ -1,0 +1,15 @@
+%br/
+.jumbotron
+  %h1 Blocitoff
+  %p Blocitoff is a self-destructing to-do app
+  %p
+    = link_to "Sign In", new_user_session_path, class: 'btn btn-primary'
+    or
+    \#{link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'} today!
+.row
+  .col-md-4
+    %h2 For the organized
+    %p Blocitoff allows you to feel accomplished, even on the busiest of days.
+  .col-md-4
+    %h2 For the unorganized
+    %p Blocitoff allows you to create a to-do list, the first step in thinking you might get something done.

@@ -1,0 +1,4 @@
+- @items.each do |item|
+  = item.name
+  = link_to "", [item.list, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true
+  %br/
